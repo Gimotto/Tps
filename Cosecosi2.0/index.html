@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.css"/>
+  <style>
+    #privato {
+      display: none;
+    }
+    #azienda{
+      display: none;
+    }
+    #commerciale{
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  
+  <!--Bottoni-->
+  <section class="hero is-primary is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns">
+          <div class="column">
+            <button class="button is-large is-primary is-inverted is-rounded"onclick="privato()">Privato</button>
+          </div>
+          <div class="column">
+            <button class="button is-large is-primary is-inverted is-rounded" onclick="azienda()">Azienda</button>
+          </div>
+          <div class="column">
+            <button class="button is-large is-primary is-inverted is-rounded" onclick="commerciale()">Commerciale</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--Registrazione Privato-->
+  <div id="privato">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered"">
+          <form action="RegistrazionePrivato.php" method="POST">
+            <article class="card is-rounded">
+              <div class="card-content">
+                <h1 class="title">Registrazione Privato</h1>
+                <input class="input" type="text" name="nome" placeholder="Nome"><br>
+                <input class="input" type="text" name="cognome" placeholder="Cognome"><br>
+                <input class="input" type="text" maxlength="16" minlength="16" name="codfiscale" placeholder="Codice Fiscale"><br>
+                <input class="input" type="text" name="username" placeholder="Username"><br>
+                <input class="input" type="password" name="password" placeholder="Password"><br>
+                <button class="button is-primary is-medium is-fullwidth">Registrati</button>
+              </div>
+            </article>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--Registrazione Azienda-->
+  <div id="azienda">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered"">
+          <form action="RegistrazioneAzienda.php" method="POST">
+            <article class="card is-rounded">
+              <div class="card-content">
+                <h1 class="title">Registrazione Azienda</h1>
+                <input class="input" type="text" name="nome" placeholder="Nome"><br>
+                <input class="input" type="text" name="cognome" placeholder="Cognome"><br>
+                <input class="input" type="text" maxlength="16" minlength="16" name="codfiscale" placeholder="Codice Fiscale"><br>
+                <input class="input" type="text" maxlength="11" minlength="11" name="piva" placeholder="Partita Iva"><br>
+                <input class="input" type="text" name="username" placeholder="Username"><br>
+                <input class="input" type="password" name="password" placeholder="Password"><br>
+                <button class="button is-primary is-medium is-fullwidth">Registrati</button>
+              </div>
+            </article>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--Registrazione Commerciale-->
+  <div id="commerciale">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered"">
+          <form action="RegistrazioneCommerciale.php" method="POST">
+            <article class="card is-rounded">
+              <div class="card-content">
+                <h1 class="title">Registrazione Commerciale</h1>
+                <input class="input" type="text" name="nome" placeholder="Nome"><br>
+                <input class="input" type="text" name="cognome" placeholder="Cognome"><br>
+                <input class="input" type="text" maxlength="16" minlength="16" name="codfiscale" placeholder="Codice Fiscale"><br>
+                <input class="input" type="email" name="pec" placeholder="PEC"><br>
+                <input class="input" type="text" name="username" placeholder="Username"><br>
+                <input class="input" type="password" name="password" placeholder="Password"><br>
+                <button class="button is-primary is-medium is-fullwidth">Registrati</button>
+              </div>
+            </article>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Script-->
+  <script>
+    var x = document.getElementById("privato");
+    var z = document.getElementById("azienda");
+    var y = document.getElementById("commerciale");
+  
+    function privato() {
+      if (x.style.display === "block") {
+        x.style.display = "none";
+        z.style.display = "none";
+        y.style.display = "none";
+      } else {
+        x.style.display = "block";
+        z.style.display = "none";
+        y.style.display = "none";
+      }
+    }
+  
+    function azienda(){
+  	 if (z.style.display === "block") {
+      z.style.display = "none";
+      x.style.display = "none";
+      y.style.display = "none";
+  	 } else {
+  		z.style.display = "block";
+      x.style.display = "none";
+      y.style.display = "none";
+  	 }
+    }
+  
+    function commerciale(){
+      if (y.style.display === "block") {
+        y.style.display = "none";
+        x.style.display = "none";
+        z.style.display = "none";
+      } else {
+        y.style.display = "block";
+        x.style.display = "none";
+        z.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
